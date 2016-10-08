@@ -3,7 +3,7 @@
 */
 
 html, body {
-  font: normal 16px Helvetica, Arial, sans-serif;
+  font: normal 20px Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -15,20 +15,13 @@ html {
 ** Common settings.
 */
 
+article,
+aside,
 body,
-h1,
-h2,
-h3,
+section,
 ul {
   margin: 0;
   padding: 0;
-}
-
-header,
-main,
-footer {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 main,
@@ -50,10 +43,6 @@ article {
   margin-bottom: 80px;
 }
 
-aside {
-  padding: 35px;
-}
-
 em {
   background-color: inherit;
   color: #53c2af;
@@ -61,32 +50,34 @@ em {
 }
 
 figure {
-  margin-bottom: 116px;
+  font-size: 0;
+  margin-bottom: 120px;
   margin-top: 40px;
 }
 
 h1 {
-  font-size: 4.25em;
+  font-size: 3.4rem;
   font-weight: normal;
   letter-spacing: 6px;
-  padding-top: 130px;
+  margin: 0;
+  padding: 130px 0 0 0;
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 2.25em;
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+h3, p {
+  font-size: 1rem;
 }
 
 h3 {
-  font-size: 1.25em;
   font-weight: normal;
-  margin-top: 23px;
-  margin-bottom: 16px;
-}
-
-p {
-  font-size: 1.25em;
-  margin-top: 19px;
+  line-height: 1rem;
+  margin: 25px 0 20px 0;
 }
 
 ul {
@@ -100,6 +91,7 @@ ul {
 header {
   background-color: #3d3d3d;
   color: #ffffff;
+  margin: 0 auto;
   padding-bottom: 50px;
   text-align: center;
 }
@@ -108,11 +100,11 @@ header {
 
 nav li {
   display: inline-block;
-  margin: 0 1.6em;
+  margin: 0 1.25rem;
 }
 
 nav a {
-  font-size: 1.25em;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
@@ -131,7 +123,7 @@ nav :hover {
 */
 
 main {
-  margin-top: 80px;
+  margin: 80px auto;
 }
 
 /* Articles column (left column) */
@@ -148,38 +140,43 @@ article a:hover {
 }
 
 article p {
-  line-height: 1.5em;
+  line-height: 1.5rem;
 }
 
 /* Sidebar column (right column) */
 
 .sidebar {
   background-color: #f6f7f8;
+  box-sizing: border-box;
   color: #787b80;
   float: right;
-  padding: 0;
+  font-size: 0.7rem;
+  padding: 23px 35px 21px 35px;
   width: 23.5%;
-}
-
-.sidebar li,
-.sidebar p {
-  font-size: 0.875em;
-  line-height: 1.5em;
 }
 
 .sidebar h2 {
   background-color: inherit;
-  color: #384048;
-  font-size: 1em;
+  color: #45494d;
+  font-size: 0.8rem;
+  padding: 0.6rem 0 0.7rem 0;
   text-transform: uppercase;
 }
 
 /* Categories links */
 
 .categories ul {
-  list-style: url("images/bullet-pointer.png");
+  padding-bottom: 105px;
   padding-left: 20px;
-  padding-top: 23px;
+}
+
+.categories li:first-of-type {
+  padding-top: 11px;
+}
+
+.categories li {
+  list-style: url("images/bullet-pointer.png");
+  padding-bottom: 5px;
 }
 
 .categories a {
@@ -194,13 +191,13 @@ article p {
 
 /* About info */
 
-.about {
-  margin-top: 37px;
+.about h2 {
+  padding: 0 0 11px 0;
 }
 
 .about p {
-  margin-bottom: 0;
-  margin-top: 25px;
+  font-size: 0.7rem;
+  line-height: 1.05rem;
 }
 
 /* Pagination Buttons */
@@ -210,22 +207,15 @@ article p {
   margin-bottom: 90px;
 }
 
-.pagination li {
-  display: inline-block;
-  margin-right: 1.6em;
-  padding: 0;
-  vertical-align: bottom;
-}
-
 .button {
   background-color: #50c3af;
-  border-radius: 30px;
+  border-radius: 12.25px;
   color: #ffffff;
-  display: block;
-  font-size: 0.875em;
-  padding: 5px 0;
+  display: inline-block;
+  font-size: 0.7rem;
+  margin-right: 1.25rem;
+  padding: 5px 25px;
   text-align: center;
-  width: 79px;
 }
 
 .disabled { /* Disabled buttons */
@@ -240,13 +230,13 @@ article p {
 footer {
   border-top: 1px solid #d0d0d0;
   display: block;
-  margin-bottom: 0;
+  margin: 0 auto;
+  padding: 14px 0 30px 0;
 }
 
 footer p {
   background-color: inherit;
   color: #7e8287;
-  font-size: 0.75em;
-  margin-bottom: 32px;
-  margin-top: 17px;
+  font-size: 0.6rem;
+  margin: 2pt 0;
 }
