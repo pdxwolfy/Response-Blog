@@ -15,7 +15,6 @@ html {
 ** Common settings.
 */
 
-article,
 aside,
 body,
 section,
@@ -40,7 +39,8 @@ a {
 }
 
 article {
-  margin-bottom: 80px;
+  margin: 0 0 80px 0;
+  padding: 0;
 }
 
 em {
@@ -227,16 +227,20 @@ article p {
 ** Footer
 */
 
+footer,
+footer p {
+  font-size: 0.6rem;
+  margin: 0 auto;
+}
+
 footer {
   border-top: 1px solid #d0d0d0;
   display: block;
-  margin: 0 auto;
-  padding: 14px 0 30px 0;
+  padding: 15px 0 30px 0;
 }
 
 footer p {
   background-color: inherit;
   color: #7e8287;
-  font-size: 0.6rem;
-  margin: 2pt 0;
+  line-height: 150%;
 }
