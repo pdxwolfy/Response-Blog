@@ -2,26 +2,19 @@
 ** Global styles.
 */
 
-html, body {
-  font: normal 20px Helvetica, Arial, sans-serif;
-}
-
 html {
   background-color: #ffffff;
   color: #45494d;
+  font: normal 20px Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-size: 1rem;
 }
 
 /*
 ** Common settings.
 */
-
-aside,
-body,
-section,
-ul {
-  margin: 0;
-  padding: 0;
-}
 
 main,
 footer {
@@ -43,10 +36,13 @@ article {
   padding: 0;
 }
 
-em {
-  background-color: inherit;
-  color: #53c2af;
-  font-style: normal;
+dt {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+fieldset {
+  border: none;
 }
 
 figure {
@@ -57,7 +53,6 @@ figure {
 
 h1 {
   font-size: 3.4rem;
-  font-weight: normal;
   letter-spacing: 6px;
   margin: 0;
   padding: 130px 0 0 0;
@@ -66,18 +61,26 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
+  font-weight: bold;
   margin: 0;
   padding: 0;
 }
 
-h3, p {
-  font-size: 1rem;
+h3 {
+  background-color: inherit;
+  color: #45494d;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-h3 {
-  font-weight: normal;
-  line-height: 1rem;
-  margin: 25px 0 20px 0;
+h3 a {
+  background-color: inherit;
+  color: #53c2af;
+}
+
+p {
+  font-size: 1rem;
 }
 
 ul {
@@ -113,7 +116,7 @@ nav .active {
   color: #50c3af;
 }
 
-nav :hover {
+nav a:hover {
   background-color: inherit;
   color: #f5dc39;
 }
@@ -123,7 +126,8 @@ nav :hover {
 */
 
 main {
-  margin: 80px auto;
+  margin: 80px auto 0 auto;
+  overflow: hidden;
 }
 
 /* Articles column (left column) */
@@ -139,8 +143,37 @@ article a:hover {
   color: #50c3af;
 }
 
+article > h2 {
+  margin-bottom: 20px;
+}
+
 article p {
   line-height: 1.5rem;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+article p > a {
+  background-color: inherit;
+  color: #53c2af;
+  font-style: normal;
+}
+
+.comments {
+  margin-bottom: 45px;
+}
+
+.comments h3:first-of-type {
+  margin-top: 10px;
+}
+
+.comments h3 {
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.comments p {
+  margin-bottom: 45px;
 }
 
 /* Sidebar column (right column) */
@@ -151,16 +184,12 @@ article p {
   color: #787b80;
   float: right;
   font-size: 0.7rem;
-  padding: 23px 35px 21px 35px;
+  padding: 35px;
   width: 23.5%;
 }
 
-.sidebar h2 {
-  background-color: inherit;
-  color: #45494d;
-  font-size: 0.8rem;
-  padding: 0.6rem 0 0.7rem 0;
-  text-transform: uppercase;
+.sidebar h3 {
+  margin-bottom: 14px;
 }
 
 /* Categories links */
@@ -191,7 +220,8 @@ article p {
 
 /* About info */
 
-.about h2 {
+.about h3 {
+  margin-top: 0;
   padding: 0 0 11px 0;
 }
 
@@ -200,27 +230,146 @@ article p {
   line-height: 1.05rem;
 }
 
-/* Pagination Buttons */
-
-.pagination { /* Must clear articles and sidebar */
-  clear: both;
-  margin-bottom: 90px;
-}
+/* Buttons */
 
 .button {
   background-color: #50c3af;
-  border-radius: 12.25px;
+  border: none;
+  border-radius: 20px;
   color: #ffffff;
+  cursor: pointer;
   display: inline-block;
   font-size: 0.7rem;
   margin-right: 1.25rem;
   padding: 5px 25px;
   text-align: center;
+    -moz-appearance: none;
+  -webkit-appearance: none;
 }
 
 .disabled { /* Disabled buttons */
   background-color: #d2d5da;
   color: #ffffff;
+  cursor: default;
+}
+
+/* Comment form */
+
+.post { /* Must clear articles and sidebar */
+  clear: both;
+  margin-bottom: 90px;
+}
+
+form {
+  height: 0;
+  left: -100%;
+  padding-top: 25px;
+  position: relative;
+  transition: left 200ms linear;
+       -moz-transition: left 200ms linear;
+         -o-transition: left 200ms linear;
+    -webkit-transition: left 200ms linear;
+}
+
+form dl {
+  margin-top: 20px;
+}
+
+form dt:last-of-type {
+  padding-bottom: 5px;
+}
+
+form dd:last-of-type {
+  padding-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+textarea {
+  box-sizing: border-box;
+  height: 140px;
+  resize: none;
+  width: 650px;
+}
+
+input[name="toggle_postbox"] {
+  display: none;
+}
+
+input[name="toggle_postbox"]:checked + form {
+  height: auto;
+  left: 0;
+}
+
+input[type="email"],
+input[type="text"],
+textarea {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  box-shadow: inset 0 0 5px #0066cc;
+}
+
+input[type="email"],
+input[type="text"] {
+  height: 38px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 450px;
+}
+
+input[type="submit"].button {
+  box-sizing: border-box;
+  font-size: 0.7rem;
+  font-weight: normal;
+}
+
+/* These next 5 selectors must be separate for some reason */
+
+input::placeholder {
+  color: #999999;
+}
+
+input::-webkit-input-placeholder {
+  color: #999999;
+}
+
+input:-moz-placeholder {
+  color: #999999;
+}
+
+input::-moz-placeholder {
+  color: #999999;
+}
+
+input:-ms-input-placeholder {
+  color: #999999;
+}
+
+textarea {
+  padding: 5px 10px;
+}
+
+/* Pagination Buttons */
+
+.pagination { /* Must clear articles and sidebar */
+  clear: both;
+  margin-bottom: 90px;
 }
 
 /*
