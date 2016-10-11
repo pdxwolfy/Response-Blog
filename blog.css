@@ -43,9 +43,17 @@ h1 {
   padding-bottom: 125px;
 }
 
+h2 {
+  font-size: 1.8rem;
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
   }
 }
 
@@ -54,16 +62,6 @@ h1 {
     background-size: 90% auto;
     margin-bottom: 50px;
     padding-bottom: 90px;
-  }
-}
-
-h2 {
-  font-size: 1.8rem;
-}
-
-@media (max-width: 768px) {
-  h2 {
-    font-size: 1.2rem;
   }
 }
 
@@ -155,6 +153,16 @@ header {
     margin: 0 1.25rem;
   }
 
+  @media (max-width: 480px) {
+    nav li {
+      display: inline-block;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin: 0 auto;
+      width: 49%;
+    }
+  }
+
   nav a {
     font-size: 1rem;
     text-transform: uppercase;
@@ -168,16 +176,6 @@ header {
   nav a:hover {
     background-color: inherit;
     color: #f5dc39;
-  }
-
-  @media (max-width: 480px) {
-    nav li {
-      display: inline-block;
-      padding-bottom: 10px;
-      padding-top: 10px;
-      margin: 0 auto;
-      width: 49%;
-    }
   }
 
 /************
